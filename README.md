@@ -10,21 +10,21 @@ An MCP server that integrates with the [Freqtrade](https://www.freqtrade.io/) cr
 ## Installation
 
 ### Prerequisites
-- **Python 3.13+**: Ensure Python is installed on your system.
+- **Python 3.12+**: Ensure Python is installed on your system.
 - **Freqtrade**: A running Freqtrade instance with the REST API enabled (see [Freqtrade Docs](https://www.freqtrade.io/en/stable/rest-api/)).
 - **Git**: For cloning the repository.
 
 ### Steps
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/kukapay/freqtrade-mcp.git
+   git clone https://github.com/DutchCryptoDad/freqtrade-mcp.git
    cd freqtrade-mcp
    ```
 
 2. **Install Dependencies**:
    Using `pip`:
    ```bash
-   pip install freqtrade-client mcp[cli]
+   pip install uv freqtrade-client mcp[cli]
    ```
    Or with `uv` (optional):
    ```bash
