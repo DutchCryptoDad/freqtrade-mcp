@@ -50,8 +50,30 @@ An MCP server that integrates with the [Freqtrade](https://www.freqtrade.io/) cr
       } 
     }
     ```
+
+   Sample configuration for Windows:
+
+   ```
+   {
+     "mcpServers": { 
+   "freqtrade-mcp": { 
+     "command": "uv", 
+     "args": [ 
+       "--directory", "C:\\Users\\USER\\freqtrade-mcp", 
+       "run", 
+       "__main__.py" 
+     ], 
+     "env": { 
+        "FREQTRADE_API_URL": "http://127.0.0.1:8080",
+        "FREQTRADE_USERNAME": "freqtrader",
+        "FREQTRADE_PASSWORD": "PASSWORD"
+     } 
+   } 
+   }
+   }
+   ```
     
-4. **Freqtrade Configuration**:
+5. **Freqtrade Configuration**:
 
     Enable the rest API by adding the api_server section to your configuration and setting api_server.enabled to true.
 
