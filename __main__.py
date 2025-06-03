@@ -3,6 +3,7 @@ import os
 from typing import List, AsyncIterator, Dict, Any
 from contextlib import asynccontextmanager
 from mcp.server.fastmcp import FastMCP, Context
+import sys
 
 # Import Freqtrade REST client
 from freqtrade_client.ft_rest_client import FtRestClient
@@ -20,12 +21,12 @@ async def app_lifespan(server: FastMCP) -> AsyncIterator[dict]:
     try:
         # Test API connectivity
         if client.ping():
-            server.info("Connected to Freqtrade API")
+            print("Connected to Freqtrade API", file=sys.stderr)
         else:
             raise Exception("Failed to connect to Freqtrade API")
         yield {"client": client}
     finally:
-        server.info("Freqtrade API client closed")
+        print("Freqtrade API client closed", file=sys.stderr)
 
 # Initialize MCP server (only once, with lifespan)
 mcp = FastMCP("FreqtradeMCP", dependencies=["freqtrade-client"], lifespan=app_lifespan)
